@@ -5,6 +5,13 @@ This is a documentation for installing Open5gs, webUI, and UERANSIM in Ubuntu 20
 
 ## 1- Installing MongoDB version 4.4.8
 
+```
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 656408E390CFB1F5
+$ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
+$ sudo apt update
+$ sudo apt install mongodb-org=4.4.8 mongodb-org-server=4.4.8 mongodb-org-shell=4.4.8 mongodb-org-mongos=4.4.8 mongodb-org-tools=4.4.8
+```
+
 Google it 
 
 ## 2- Installing Open5gs
@@ -47,6 +54,11 @@ $ cd ~/UERANSIM
 $ make
 ```
 
+```
+$ sudo systemctl enable mongod.service
+$ sudo systemctl start mongod.service
+$ sudo systemctl status mongod.service
+```
 
 ## Testing UERANSIM request to Open5gs
 
